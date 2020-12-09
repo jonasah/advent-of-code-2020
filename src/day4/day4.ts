@@ -1,11 +1,10 @@
-import fs from 'fs';
-import path from 'path';
 import { IPassport } from './passport.model';
 import { hasRequiredFields, isValidPassport } from './passport-validators';
 import { parsePassports } from './passport-parser';
+import { getInput } from '../common/get-input';
 
 export const day4 = (): void => {
-  const passports = readInput();
+  const passports = parsePassports(getInput(4));
 
   const result4_1 = day4_1(passports);
   console.log(`Day 4-1: ${result4_1}`);
@@ -26,9 +25,4 @@ export const day4_2 = (passports: Partial<IPassport>[]): number => {
     (sum, passport) => sum + (isValidPassport(passport) ? 1 : 0),
     0
   );
-};
-
-const readInput = (): Partial<IPassport>[] => {
-  const content = fs.readFileSync(path.join(__dirname, 'input.txt'), 'utf-8');
-  return parsePassports(content);
 };

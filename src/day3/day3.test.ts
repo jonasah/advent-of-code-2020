@@ -13,7 +13,7 @@ const testInput = `
 #.##...#...
 #...##....#
 .#..#...#.#
-`;
+`.trim();
 
 describe('day3', () => {
   let map: Map;

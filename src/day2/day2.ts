@@ -1,16 +1,15 @@
-import fs from 'fs';
-import path from 'path';
 import { assert } from '../common/assert';
+import { getInput } from '../common/get-input';
 
 export type IPolicyPassword = [number, number, string, string];
 
 export const day2 = (): void => {
-  const input = readInput();
+  const passwords = getInput(2).split('\n').map(toPolicyPassword);
 
-  const result1_1 = day2_1(input);
+  const result1_1 = day2_1(passwords);
   console.log(`Day 2-1: ${result1_1}`);
 
-  const result1_2 = day2_2(input);
+  const result1_2 = day2_2(passwords);
   console.log(`Day 2-2: ${result1_2}`);
 };
 
@@ -20,11 +19,6 @@ export const day2_1 = (policyPasswords: IPolicyPassword[]): number => {
 
 export const day2_2 = (policyPasswords: IPolicyPassword[]): number => {
   return policyPasswords.filter((p) => isValidPassword2(p)).length;
-};
-
-const readInput = (): IPolicyPassword[] => {
-  const content = fs.readFileSync(path.join(__dirname, 'input.txt'), 'utf-8');
-  return content.trim().split('\n').map(toPolicyPassword);
 };
 
 const regexp = new RegExp(/^(\d+)-(\d+)\s(\w):\s(\w+)$/);

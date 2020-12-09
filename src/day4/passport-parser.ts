@@ -3,7 +3,6 @@ import { assert } from '../common/assert';
 
 export const parsePassports = (input: string): Partial<IPassport>[] => {
   const sanitizedInput = input
-    .trim()
     .split('\n')
     .map((line) => line.trim())
     .join('\n');

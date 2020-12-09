@@ -1,6 +1,5 @@
-import fs from 'fs';
-import path from 'path';
 import { assert } from '../common/assert';
+import { getInput } from '../common/get-input';
 
 export const day1 = (): void => {
   const input = readInput();
@@ -58,9 +57,7 @@ export const day1_2 = (entries: number[], searchValue: number): number => {
 };
 
 const readInput = (): number[] => {
-  const content = fs.readFileSync(path.join(__dirname, 'input.txt'), 'utf-8');
-  return content
-    .trim()
+  return getInput(1)
     .split('\n')
     .map((line) => parseInt(line.trim()));
 };

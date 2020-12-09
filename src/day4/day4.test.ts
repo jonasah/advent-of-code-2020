@@ -110,7 +110,7 @@ ecl:brn pid:760753108 byr:1931
 hgt:179cm
 
 hcl:#cfa07d eyr:2025 pid:166559648
-iyr:2011 ecl:brn hgt:59in`;
+iyr:2011 ecl:brn hgt:59in`.trim();
 
 const day4_2_invalidTestInput = `
 eyr:1972 cid:100
@@ -125,7 +125,7 @@ ecl:brn hgt:182cm pid:021572410 eyr:2020 byr:1992 cid:277
 
 hgt:59cm ecl:zzz
 eyr:2038 hcl:74454a iyr:2023
-pid:3556412378 byr:2007`;
+pid:3556412378 byr:2007`.trim();
 
 const day4_2_validTestInput = `
 pid:087499704 hgt:74in ecl:grn iyr:2012 eyr:2030 byr:1980
@@ -139,4 +139,4 @@ hgt:164cm byr:2001 iyr:2015 cid:88
 pid:545766238 ecl:hzl
 eyr:2022
 
-iyr:2010 hgt:158cm hcl:#b6652a ecl:blu byr:1944 eyr:2021 pid:093154719`;
+iyr:2010 hgt:158cm hcl:#b6652a ecl:blu byr:1944 eyr:2021 pid:093154719`.trim();
