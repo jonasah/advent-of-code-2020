@@ -5,3 +5,7 @@ export function assert(condition: unknown, message?: string): asserts condition 
     throw new AssertionError({ message });
   }
 }
+
+export function assertUnreachable(): never {
+  assert(false, 'Should not be here!');
+}
